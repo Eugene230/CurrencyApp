@@ -1,0 +1,12 @@
+.MuiOutlinedInput-input {
+  padding: 10px;
+  outline-color: blue;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border: 0px;
+}
+
+.Mui-focused {
+    border: 5px;
+}

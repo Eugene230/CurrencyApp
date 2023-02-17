@@ -9,6 +9,8 @@ import Paper from "@mui/material/Paper";
 import { connect } from "react-redux";
 import { RootState } from "../../store/rootReducer";
 import ICurrency from "../../interfaces/ICurrency";
+import { Box } from "@mui/material";
+import CurrencyInput from "../CurrencyInput/CurrencyInput";
 
 interface IMainContentProps {
   currencysList: ICurrency[];
@@ -37,26 +39,32 @@ const CurrencysTable: React.FunctionComponent<IMainContentProps> = ({
   const rows = createRows(currencysList);
 
   return (
-    <TableContainer component={Paper}>
-      <Table aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="center">Currency/Current date</TableCell>
-            <TableCell align="center">Buy</TableCell>
-            <TableCell align="center">Sell</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell align="center">{row.name}</TableCell>
-              <TableCell align="center">{row.calories}</TableCell>
-              <TableCell align="center">{row.fat}</TableCell>
+    <Box sx={{ padding: "10%" }}>
+      <TableContainer component={Paper}>
+        <Table aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center">Currency/Current date</TableCell>
+              <TableCell align="center">Buy</TableCell>
+              <TableCell align="center">Sell</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow key={row.name}>
+                <TableCell align="center">{row.name}</TableCell>
+                <TableCell align="center">
+                  <CurrencyInput value={row.calories} />
+                </TableCell>
+                <TableCell align="center">
+                  <CurrencyInput value={row.fat} />
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Box>
   );
 };
 

@@ -9,8 +9,12 @@ import {
 const fetchCurrencys = async (url: string): Promise<ICurrency> => {
   let response = await fetch(url, {
     method: "GET",
+    mode: 'cors',
+    headers: {
+        'Content-Type': 'application/json',
+    }
   });
-  console.log(response);
+
   let currencys = await response.json();
   return currencys;
 };
