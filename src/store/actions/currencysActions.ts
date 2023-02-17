@@ -7,44 +7,46 @@ export enum CurrencysActionTypes {
   RESET = "RESET",
 }
 
-export interface requestCurrencysAction {
+export interface IRequestCurrencysAction {
   type: CurrencysActionTypes.REQUEST_CURRENCYS;
+  url: string;
 }
 
-export const requestCurrencys = (): requestCurrencysAction => ({
+export const requestCurrencys = (url: string): IRequestCurrencysAction => ({
   type: CurrencysActionTypes.REQUEST_CURRENCYS,
+  url,
 });
 
-interface requestCurrencysSuccessAction {
+interface IRequestCurrencysSuccessAction {
   type: CurrencysActionTypes.REQUEST_CURRENCYS_SUCCESS;
-  currensysList: ICurrency[];
+  currencysList: ICurrency[];
 }
 
 export const requestCurrencysSuccess = (
-    currensysList: ICurrency[]
-): requestCurrencysSuccessAction => ({
+  currencysList: ICurrency[]
+): IRequestCurrencysSuccessAction => ({
   type: CurrencysActionTypes.REQUEST_CURRENCYS_SUCCESS,
-  currensysList,
+  currencysList,
 });
 
-interface requestCurrencysErrorAction {
+interface IRequestMoviesErrorAction {
   type: CurrencysActionTypes.REQUEST_CURRENCYS_ERROR;
 }
 
-export const requestCurrencysError = (): requestCurrencysErrorAction => ({
+export const requestMoviesError = (): IRequestMoviesErrorAction => ({
   type: CurrencysActionTypes.REQUEST_CURRENCYS_ERROR,
 });
-  
-  interface resetAction {
-    type: CurrencysActionTypes.RESET;
-  }
-  
-  export const reset = (): resetAction => ({
-    type: CurrencysActionTypes.RESET,
-  });
-  
-  export type CurrencysAction =
-    | requestCurrencysAction
-    | requestCurrencysSuccessAction
-    | requestCurrencysErrorAction
-    | resetAction;
+
+interface IResetAction {
+  type: CurrencysActionTypes.RESET;
+}
+
+export const reset = (): IResetAction => ({
+  type: CurrencysActionTypes.RESET,
+});
+
+export type CurrencysAction =
+  | IRequestCurrencysAction
+  | IRequestCurrencysSuccessAction
+  | IRequestMoviesErrorAction
+  | IResetAction;
