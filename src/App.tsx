@@ -1,12 +1,16 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./store/store";
+import MainContent from "./components/MainContent/MainContent";
 
-function App() {
+import "./App.css";
+
+const App: React.FunctionComponent = () => {
   return (
-    <div className="App">
-      <span>QWE</span>
-    </div>
+    <Provider store={store}>
+      <MainContent />
+    </Provider>
   );
-}
+};
 
 export default App;
