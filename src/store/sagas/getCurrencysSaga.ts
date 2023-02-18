@@ -10,12 +10,10 @@ const fetchCurrencys = async (url: string): Promise<ICurrency[]> => {
   let response = await fetch(url, {
     // mode: 'no-cors',
     headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers":
-        "Origin, X-Requested-With, Content-Type, Accept",
-      Accept:
-        "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-    },
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+        'Accept': 'application/json',
+    }
   });
   console.log(response);
   const currencys = await response.json();
