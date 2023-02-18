@@ -8,7 +8,7 @@ import {
 
 const fetchCurrencys = async (url: string): Promise<ICurrency[]> => {
   let response = await fetch(url, {
-    mode: 'no-cors',
+    // mode: 'no-cors',
     headers: {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
