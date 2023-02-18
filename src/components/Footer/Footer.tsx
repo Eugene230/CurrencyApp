@@ -2,7 +2,6 @@ import * as React from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { Box } from "@mui/system";
 
 const Footer: React.FunctionComponent = () => {
   return (

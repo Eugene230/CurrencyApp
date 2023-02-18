@@ -9,10 +9,7 @@ export interface CurrencysState {
 }
 
 const CurrensysDefaultState: CurrencysState = {
-  currencysList: [
-    { ccy: "EUR", base_ccy: "UAH", buy: "40.90000", sale: "41.90000" },
-    { ccy: "USD", base_ccy: "UAH", buy: "39.20000", sale: "39.70000" },
-  ],
+  currencysList: [],
 };
 
 export const currencyReducer = (

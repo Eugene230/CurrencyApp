@@ -1,4 +1,4 @@
-import { call, put, takeLatest, all } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import ICurrency from "../../interfaces/ICurrency";
 import {
   CurrencysActionTypes,
@@ -8,11 +8,11 @@ import {
 
 const fetchCurrencys = async (url: string): Promise<ICurrency> => {
   let response = await fetch(url, {
-    method: "GET",
-    mode: 'cors',
-    headers: {
-        'Content-Type': 'application/json',
-    }
+    mode: 'no-cors',
+    // headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    //     'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+    // }
   });
 
   let currencys = await response.json();
