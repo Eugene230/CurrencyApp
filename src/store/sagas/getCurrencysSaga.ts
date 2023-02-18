@@ -6,16 +6,18 @@ import {
   requestCurrencysSuccess,
 } from "../actions/currencysActions";
 
-const fetchCurrencys = async (url: string): Promise<ICurrency> => {
+const fetchCurrencys = async (url: string): Promise<ICurrency[]> => {
   let response = await fetch(url, {
     mode: 'no-cors',
-    // headers: {
-    //     'Access-Control-Allow-Origin': '*',
-    //     'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
-    // }
+    headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+        'Accept': 'application/json',
+    }
   });
-
-  let currencys = await response.json();
+  console.log(response);
+  const currencys = await response.json();
+  console.log(currencys);
   return currencys;
 };
 
