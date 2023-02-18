@@ -16,7 +16,7 @@ const MainPage: React.FunctionComponent<PropsFromRedux> = ({ requestCurrencys })
   
   useEffect(() => {
     requestCurrencys(
-      "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5"
+      "/pubinfo?json&exchange&coursid=5"
     );
   }, []);
 
