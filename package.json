@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "proxy": "https://api.privatbank.ua/p24api",
+  "homepage": "http://localhost:3000",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -25,7 +26,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start HOST=localhost",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
