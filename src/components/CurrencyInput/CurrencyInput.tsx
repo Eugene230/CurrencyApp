@@ -4,7 +4,7 @@ import * as React from "react";
 import "./CurrencyInput.css";
 
 interface ICurrencyInputProps {
-  value: string;
+  value: number;
 }
 
 const CurrencyInput: React.FunctionComponent<ICurrencyInputProps> = ({

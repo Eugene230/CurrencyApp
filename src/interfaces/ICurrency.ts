@@ -1,8 +1,10 @@
 interface ICurrency {
-    ccy: string;
-    base_ccy: string;
-    buy: string;
-    sale: string;
+  currencyCodeA: number;
+  currencyCodeB: number;
+  date: number;
+  rateBuy: number;
+  rateCross: number;
+  rateSell: number;
   }
   
   export default ICurrency;

@@ -16,7 +16,7 @@ const MainPage: React.FunctionComponent<PropsFromRedux> = ({ requestCurrencys })
   
   useEffect(() => {
     requestCurrencys(
-      "/pubinfo?json&exchange&coursid=5"
+      "https://api.monobank.ua/bank/currency"
     );
   }, []);
 

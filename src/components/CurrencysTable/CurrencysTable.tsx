@@ -18,18 +18,18 @@ interface IMainContentProps {
 
 interface IRow {
   name: string;
-  calories: string;
-  fat: string;
+  rateBuy: number;
+  rateSell: number;
 }
 
-function createRow(name: string, calories: string, fat: string) {
-  return { name, calories, fat };
+function createRow(name: string, rateBuy: number, rateSell: number): IRow {
+  return { name, rateBuy, rateSell };
 }
 
 function createRows(currencysList: ICurrency[]): IRow[] {
   return currencysList.map((item: ICurrency) => {
-    const { ccy, base_ccy, buy, sale } = item;
-    return createRow(`${ccy}/${base_ccy}`, buy, sale);
+    const { currencyCodeA, currencyCodeB, rateBuy, rateSell } = item;
+    return createRow(`${currencyCodeA}/${currencyCodeB}`, rateBuy, rateSell);
   });
 }
 
@@ -54,10 +54,10 @@ const CurrencysTable: React.FunctionComponent<IMainContentProps> = ({
               <TableRow key={row.name}>
                 <TableCell align="center">{row.name}</TableCell>
                 <TableCell align="center">
-                  <CurrencyInput value={row.calories} />
+                  <CurrencyInput value={row.rateBuy} />
                 </TableCell>
                 <TableCell align="center">
-                  <CurrencyInput value={row.fat} />
+                  <CurrencyInput value={row.rateSell} />
                 </TableCell>
               </TableRow>
             ))}
